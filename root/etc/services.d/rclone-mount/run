@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+umount "${RCLONE_MOUNT_TARGET}"
+mkdir -p "${RCLONE_MOUNT_TARGET}"
+chown -R abc:abc "${RCLONE_MOUNT_TARGET}"
+exec s6-setuidgid abc \
+    rclone mount -v \
+        --config="/config/.config/rclone/rclone.conf" \
+        "${RCLONE_MOUNT_DIR}" \
+        "${RCLONE_MOUNT_TARGET}"
