@@ -1,5 +1,5 @@
-# renovate: versioning=regex:^ubuntu-mate-.+-ls(?<major>\d+)$
-FROM linuxserver/webtop:ubuntu-mate-d4b32207-ls41
+# renovate: versioning=regex:^ubuntu-xfce-.+-ls(?<major>\d+)$
+FROM linuxserver/webtop:ubuntu-xfce-b2e616ba-ls40
 
 ARG TARGETPLATFORM
 
