@@ -10,4 +10,9 @@ RUN RCLONE_PLATFORM=$(echo $TARGETPLATFORM | sed 's|/|-|g' ) && \
     apt install -y /tmp/rclone.deb && \
     rm /tmp/rclone.deb
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        fuse \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY root/ /
